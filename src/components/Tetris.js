@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import '../App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faAngleLeft, faAngleRight, faAngleDown, faRedo } from '@fortawesome/free-solid-svg-icons'
 
 import { createStage, checkCollision } from '../gameHelpers';
 
@@ -24,8 +27,6 @@ const Tetris = () => {
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
   const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(rowsCleared);
-
-  console.log('re-render');
 
   const movePlayer = dir => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
@@ -89,6 +90,19 @@ const Tetris = () => {
       }
     }
   }
+  const moveLeft = () => {
+    movePlayer(-1);
+  }
+  const moveRight = () => {
+    movePlayer(1);
+  }
+  const rotate = () => {
+    playerRotate(stage, 1);
+  }
+  const moveDown = () => {
+    dropPlayer();
+    setDropTime(1000 / (level + 1) + 200);
+  }
 
   useInterval(() => {
     drop();
@@ -102,7 +116,7 @@ const Tetris = () => {
           {gameOver ? (
             <Display gameOver={gameOver} text="Game Over" />
           ) : (
-            <div>
+            <div class="display-contaier">
               <Display text={`Score: ${score}`} />
               <Display text={`Rows: ${rows}`} />
               <Display text={`Level: ${level}`} />
@@ -111,6 +125,20 @@ const Tetris = () => {
           <StartButton callback={startGame} />
         </aside>
       </StyledTetris>
+      <div class="btn-container">
+        <button onClick={moveLeft} class="btn">
+          <FontAwesomeIcon icon={faAngleLeft} />
+        </button>
+        <button onClick={moveRight} class="btn">
+          <FontAwesomeIcon icon={faAngleRight} />
+        </button>
+        <button onClick={moveDown} class="btn">
+          <FontAwesomeIcon icon={faAngleDown} />
+        </button>
+        <button onClick={rotate} class="btn">
+          <FontAwesomeIcon icon={faRedo} />
+        </button>
+      </div>
     </StyledTetrisWrapper>
   );
 };

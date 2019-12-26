@@ -26,4 +26,15 @@ export const StyledTetris = styled.div`
         display: block
         padding: 0 20px;
     }
+
+    @media screen and (min-width: 320px) and (max-width: 768px) {
+        padding: 10px;
+        display: block;
+
+        aside {
+            display: flex;
+            margin-top: -475px;
+            padding: 0;
+        }
+    }
 `

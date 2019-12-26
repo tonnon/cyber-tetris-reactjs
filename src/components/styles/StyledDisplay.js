@@ -28,6 +28,12 @@ export const StyledDisplay = styled.div`
     -2px 4px 4px #471164, 
     0 0 10px #b22cfb,
     inset 1px 1px 1px white;
-  color: #D895FD;
-  border: 2px solid;
+    color: #D895FD;
+    border: 2px solid;
+
+    @media screen and (min-width: 320px) and (max-width: 768px) {
+      padding: 5px 26px 5px 20px;
+      font-size: 10px;
+      width: 74px;
+    }
 `
