@@ -1,6 +1,7 @@
 {
   "name": "cyber-tetris-reactjs",
   "version": "0.1.0",
+  "proxy": "http://localhost:8080",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
@@ -15,7 +16,8 @@
     "styled-components": "^4.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && yarn && yarn run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
