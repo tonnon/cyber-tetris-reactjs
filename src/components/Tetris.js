@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import '../App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faAngleLeft, faAngleRight, faAngleDown, faRedo } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft, faAngleRight, faAngleDown, faRedo } from '@fortawesome/free-solid-svg-icons';
+
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 
 import { createStage, checkCollision } from '../gameHelpers';
 
@@ -19,6 +22,8 @@ import { useGameStatus } from '../hooks/useGameStatus';
 import Stage from './Stage';
 import Display from './Display';
 import StartButton from './StartButton';
+
+import audio from './audio.wav';
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
@@ -49,7 +54,7 @@ const Tetris = () => {
   const drop = () => {
     if(rows > (level + 1) * 10) {
       setLevel(prev => prev + 1);
-      setDropTime(1000 / (level + 1) + 200);
+      setDropTime(1000 / (level + 1) + 4000);
     }
     if (!checkCollision(player, stage, { x: 0, y: 1 })) {
       updatePlayerPos({ x: 0, y: 1, collided: false })
@@ -124,20 +129,27 @@ const Tetris = () => {
           )}
           <StartButton callback={startGame} />
         </aside>
+        <AudioPlayer
+          autoPlay='true'
+          volume = {0.4}
+          src={audio}
+          loop="true"
+          onPlay={e => console.log("onPlay")}
+        />
       </StyledTetris>
       <div class="btn-container">
-        <button onClick={moveLeft} class="btn">
+        <div onClick={moveLeft} class="btn">
           <FontAwesomeIcon icon={faAngleLeft} />
-        </button>
-        <button onClick={moveRight} class="btn">
+        </div>
+        <div onClick={moveRight} class="btn">
           <FontAwesomeIcon icon={faAngleRight} />
-        </button>
-        <button onClick={moveDown} class="btn">
+        </div>
+        <div onClick={moveDown} class="btn">
           <FontAwesomeIcon icon={faAngleDown} />
-        </button>
-        <button onClick={rotate} class="btn">
+        </div>
+        <div onClick={rotate} class="btn">
           <FontAwesomeIcon icon={faRedo} />
-        </button>
+        </div>
       </div>
     </StyledTetrisWrapper>
   );

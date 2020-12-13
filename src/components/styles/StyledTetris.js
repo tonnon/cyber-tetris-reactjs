@@ -16,7 +16,7 @@ export const StyledTetrisWrapper = styled.div`
 export const StyledTetris = styled.div`
     display: flex;
     align-items: flex-start;
-    padding: 60px;
+    padding: 20px;
     margin: 0 auto;
     max-width: 900px
 
@@ -25,6 +25,10 @@ export const StyledTetris = styled.div`
         max-width: 200px;
         display: block
         padding: 0 20px;
+    }
+
+    .rhap_container {
+        display: none
     }
 
     @media screen and (min-width: 320px) and (max-width: 768px) {
