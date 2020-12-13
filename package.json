@@ -19,7 +19,6 @@
   },
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "cd client && yarn && yarn run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "dev": "react-scripts start",
