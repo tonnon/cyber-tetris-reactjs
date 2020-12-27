@@ -27,7 +27,7 @@ export const StyledStage = styled.div`
     -2px 4px 4px #471164, 
     0 0 10px #b22cfb,
     inset 1px 1px 1px white;
-    @media screen and (min-width: 320px) and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1365px) {
         margin-top: 55px;
         max-width: 75vw;
         grid-template-rows: repeat(
@@ -35,6 +35,6 @@ export const StyledStage = styled.div`
             calc(75vw / ${props => props.width})
         );
         grid-template-columns: repeat(${props => props.width}, 1fr);
-        margin-left: 28px;
+        margin: 100px auto 0;
     }
 `

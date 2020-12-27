@@ -31,7 +31,7 @@ export const StyledDisplay = styled.div`
     color: #D895FD;
     border: 2px solid;
 
-    @media screen and (min-width: 320px) and (max-width: 768px) {
+    @media screen and (min-width: 320px) and (max-width: 1365px) {
       padding: 5px 26px 5px 20px;
       font-size: 10px;
       width: 74px;

@@ -3,9 +3,6 @@ import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight, faAngleDown, faRedo } from '@fortawesome/free-solid-svg-icons';
 
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
-
 import { createStage, checkCollision } from '../gameHelpers';
 
 // Styled Components
@@ -22,8 +19,6 @@ import { useGameStatus } from '../hooks/useGameStatus';
 import Stage from './Stage';
 import Display from './Display';
 import StartButton from './StartButton';
-
-import audio from './audio.wav';
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
@@ -129,13 +124,6 @@ const Tetris = () => {
           )}
           <StartButton callback={startGame} />
         </aside>
-        <AudioPlayer
-          autoPlay='true'
-          volume = {0.4}
-          src={audio}
-          loop="true"
-          onPlay={e => console.log("onPlay")}
-        />
       </StyledTetris>
       <div class="btn-container">
         <div onClick={moveLeft} class="btn">

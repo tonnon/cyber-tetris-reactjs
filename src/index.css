@@ -7,3 +7,9 @@ body {
   font-family: 'Pixel';
   src: url('font/Cyberverse.otf') format('woff');
 }
+
+@media screen and (min-width: 320px) and (max-width: 1365px) {
+  body {
+    overflow-y: scroll;
+  }
+}

@@ -3,11 +3,12 @@
   display: none
 }
 
-@media screen and (min-width: 320px) and (max-width: 768px) {
+
+@media screen and (min-width: 320px) and (max-width: 1365px) {
   .btn {
     display: block;
     background: rgba(0, 0, 0,0.7);
-    border-radius: 50px;
+    border-radius: 40px;
     box-shadow: 
     0 1px 2px rgba(0,0,0, 0.6), 
     2px 1px 4px rgba(0,0,0, 0.3), 
@@ -24,18 +25,24 @@
     color: #D895FD;
     border: 2px solid;
     display: block;
-    margin-right: 15px;
-    padding: 5px;
+    padding: 20px;
     font-size: 15px;
   }
   .display-contaier{
     display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
     
   }
   .btn-container{
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 410px;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .btn svg {
+    font-size: 1.5em;
   }
 }

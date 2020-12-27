@@ -27,10 +27,10 @@ display: block;
   animation: flickering 5s infinite;
   background: rgba(0, 0, 0,0.7);
   border-radius: 50px
-  @media screen and (min-width: 320px) and (max-width: 768px) {
+  @media screen and (min-width: 320px) and (max-width: 1365px) {
     width: 253px;
     padding: 5px 26px 5px 20px;
     font-size: 10px;
-    margin-top: -1px;
+    margin-bottom: 20px;
   }
 `
